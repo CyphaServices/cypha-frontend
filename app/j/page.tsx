@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { io, Socket } from 'socket.io-client';
 
@@ -9,22 +9,22 @@ type HostEventPayload = Record<string, unknown>;
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE || '';
 
-export default function JoinPage() {
+// Tell Next.js this page is dynamic (don’t prerender at build)
+export const dynamic = 'force-dynamic';
+
+function JoinInner() {
   const qs = useSearchParams();
   const [code, setCode] = useState('');
   const socketRef = useRef<Socket | null>(null);
 
+  // init socket once
   useEffect(() => {
     if (!API_BASE) return;
     const s = io(API_BASE, { transports: ['websocket'] });
     socketRef.current = s;
 
-    const onPresence = (data: PresencePayload) => {
-      console.log('presence:', data);
-    };
-    const onEvent = (payload: HostEventPayload) => {
-      console.log('event:', payload);
-    };
+    const onPresence = (data: PresencePayload) => console.log('presence:', data);
+    const onEvent = (payload: HostEventPayload) => console.log('event:', payload);
 
     s.on('presence', onPresence);
     s.on('event', onEvent);
@@ -36,6 +36,7 @@ export default function JoinPage() {
     };
   }, []);
 
+  // read ?c=
   useEffect(() => {
     const c = qs.get('c');
     if (c) setCode(c.toUpperCase());
@@ -61,7 +62,17 @@ export default function JoinPage() {
           Join
         </button>
       </form>
-      <p style={{ marginTop: 12, opacity: 0.7 }}>Tip: try <code>?c=LA123</code> in the URL</p>
+      <p style={{ marginTop: 12, opacity: 0.7 }}>
+        Tip: try <code>?c=LA123</code> in the URL
+      </p>
     </main>
+  );
+}
+
+export default function JoinPage() {
+  return (
+    <Suspense fallback={<div style={{ padding: 24 }}>Loading…</div>}>
+      <JoinInner />
+    </Suspense>
   );
 }
