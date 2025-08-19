@@ -6,7 +6,7 @@ function launchYouTube() {
 // Function to open LAN Bingo client
 function openLANBingo() {
   // Adjust URL to your Bingo server IP
-  window.location.href = "https://api.cyphaent.com/client.html";
+  window.location.href = "https://bingo.cyphaent.com/client.html";
 }
 
 // DOMContentLoaded ensures DOM is fully loaded before running scripts
