@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Orbitron';
+  src: url('orbitron-font/Orbitron-Bold.ttf') format('true type'),
+       url('orbitron-font/Orbitron-Bold.ttf') format('true type');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('orbitron-font/Orbitron-Bold.ttf') format('true type'),
+       url('orbitron-font/Orbitron-Bold.ttf') format('true type');
+  font-weight: 700;
+  font-style: normal;
+}

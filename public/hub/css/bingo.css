@@ -1,0 +1,53 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: sans-serif;
+  text-align: center;
+}
+#bingo-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+.bingo-cell {
+  background: #111;
+  border: 2px solid #0ff;
+  padding: 20px;
+  cursor: pointer;
+}
+.bingo-cell.marked {
+  background: #f0f;
+}
+#second-chance {
+  background: #f0f;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.theme-btn {
+  background: #0ff;
+  color: black;
+  padding: 15px 30px;
+  margin: 15px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.theme-btn.back {
+  margin-top: 30px;
+  background: #00e5ff;
+  color: #000;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00e5ff;
+  transition: 0.3s ease;
+}
+.theme-btn.back:hover {
+  background: #ff00cc;
+  text-shadow: 0 0 10px #ff00cc;
+}

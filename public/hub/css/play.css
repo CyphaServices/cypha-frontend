@@ -1,0 +1,114 @@
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(ellipse at center, #0e0020, #000000);
+  background-image: url('Wallpaper.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #00e5ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+.logo {
+  font-size: 64px;
+  color: #00e5ff;
+  text-shadow: 0 0 10px #00e5ff, 0 0 30px #00e5ff;
+  position: relative;
+  margin-top: 50px;
+}
+
+.logo::before {
+  content: '\1F579';
+  font-size: 48px;
+  position: absolute;
+  top: -20px;
+  left: calc(50% - 24px);
+  color: #ff0080;
+  text-shadow: 0 0 15px #ff0080;
+}
+
+.tagline {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #ff0080;
+  text-shadow: 0 0 6px #ff0080;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 25px;
+  margin-top: 60px;
+  padding: 0 20px;
+  width: 90%;
+  max-width: 960px;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid #00e5ff;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 18px;
+  color: #00e5ff;
+  text-shadow: 0 0 10px #00e5ff;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #00e5ff;
+  color: #000;
+  text-shadow: none;
+  transform: scale(1.05);
+}
+
+.icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 10px;
+  color: #ff00cc;
+}
+
+.back-btn {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #00e5ff;
+  text-shadow: 0 0 10px #00e5ff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  color: #ff0080;
+  text-shadow: 0 0 10px #ff0080;
+}
+
+.scroll-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 40px 20px;
+}
+.scroll-grid .card {
+  min-width: 200px;
+  flex: 0 0 auto;
+}
+
+.catalog-frame {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  border-radius: 12px;
+}
+
+

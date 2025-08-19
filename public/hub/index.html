@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cypha Social Night</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="main1.js" defer></script>
+</head>
+<body>
+  <!-- Main header -->
+  <div class="logo">CYPHA SOCIAL NIGHT</div>
+  <div class="tagline">Engage. Play. Win.</div>
+
+  <!-- Buttons Grid Container -->
+  <div class="grid">
+    <!-- YouTube Button -->
+    <div class="btn" id="youtubeBtn">▶️ Launch YouTube</div>
+
+    <!-- Retro Games LaunchBox -->
+    <div class="btn" onclick="CyphaBridge.launchLaunchBox()">🎮 Launch Retro Games</div>
+
+    <!-- Card Games (Navigation to blackjack.html) -->
+    <div class="btn" onclick="window.location.href='blackjack.html'">🃏 Card Games</div>
+
+    <!-- View Leaderboard -->
+    <div class="btn" onclick="window.location.href='leaderboard.html'">⏳ View Leaderboard</div>
+
+    <!-- Play Bingo (LAN Bingo) -->
+    <div class="btn" onclick="openLANBingo()">🎯 Play Bingo!</div>
+
+    <!-- ATL Games (Surprise Games) -->
+    <div class="btn" onclick="window.location.href='surprise.html'">🎁 ATL Games</div>
+
+    <!-- Event Schedule -->
+    <div class="btn" onclick="window.location.href='schedule.html'">📅 Event Schedule</div>
+  </div>
+</body>
+</html>
